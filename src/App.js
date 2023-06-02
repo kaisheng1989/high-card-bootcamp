@@ -34,6 +34,7 @@ class App extends React.Component {
   // Setting State for Reset Game Condition.
   //Conditions: (1) Deck Shuffled (2) Gamenot started (3) Player count set to 0. (4) No round winner. (5) currentCards is empty.
   resetGame = () => {
+    //console.log(this.state)
     this.setState({
       cardDeck: makeShuffledDeck(),
       hasGameBegins: true,
@@ -57,7 +58,7 @@ class App extends React.Component {
     newCurrentCards[0].rank > newCurrentCards[1].rank
       ? (newRoundWinner = 1)
       : (newRoundWinner = 2);
-
+    //console.log(this.state)
     this.setState((state) => ({
       cardDeck: state.cardDeck.slice(0, -2),
       currentCards: newCurrentCards,
